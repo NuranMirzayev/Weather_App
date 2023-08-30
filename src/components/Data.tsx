@@ -52,9 +52,6 @@ const Data = ({ info, getWeather, mes, loading, setLoading }: Props) => {
             </div>
             <div className='main_box_information  '>
                 <div className='box_left'>
-                    {/* {loading ?
-                    <div className="loader"></div> : */}
-                    {/* <> */}
                     {!mes ?
                         <>
                             <img className='animate__animated animate__zoomIn' src={`https://openweathermap.org/img/wn/${info.icon}@4x.png`} alt={`${info.icon}`} />
