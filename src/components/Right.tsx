@@ -9,10 +9,10 @@ const Right = () => {
 
     const [infoWeather, setInfoWeather] = useState<TypesWeather>({})
     const [mes, setMes] = useState('Enter city name')
-    const [loading, setLoading] = useState<boolean>(false)
+    // const [loading, setLoading] = useState<boolean>(false)
 
     const getWeather = async (city: string) => {
-        setLoading(true)
+        // setLoading(true)
         try {
             let res = await fetch(`${base_url}?q=${city}&appid=${api_key}&units=metric`)
             let data = await res.json()
@@ -32,7 +32,7 @@ const Right = () => {
                 humidity: data.main.humidity,
 
             });
-            setLoading(false)
+            // setLoading(false)
             setMes('')
         } catch (error) {
             setMes('There is no such Place!')
@@ -40,7 +40,13 @@ const Right = () => {
     }
     return (
         <div className='rght_component'>
-            <Data info={infoWeather} getWeather={getWeather} mes={mes} loading={loading} setLoading={setLoading} />
+            <Data
+                info={infoWeather}
+                getWeather={getWeather}
+                mes={mes}
+            // loading={loading} 
+            // setLoading={setLoading}
+            />
         </div>
     )
 }
